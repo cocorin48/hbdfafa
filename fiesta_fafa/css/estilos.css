@@ -1,0 +1,583 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffd7ec;
+    overflow-x:hidden;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+#fondo{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:url("../img/fondo1.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    z-index:-5;
+}
+#contenedor{
+    width:100%;
+    max-width:450px;
+    margin: 40px auto;
+    padding: 25px;
+    position:relative;
+    z-index:10;
+}
+#bienvenida{
+    width:100%;
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:30px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+#sobre{
+    width:180px;
+    max-width:70%;
+    margin-bottom:25px;
+    transition:.4s;
+}
+h1 {
+    font-size:1.2rem;
+    font-weight:800;
+    color:#ffb7e8;
+    text-shadow:
+        0 0 6px #f4d5ff,
+        0 0 35px #ffb7e8;
+    animation:flotar 3s ease-in-out infinite;
+}
+@keyframes flotar{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-5px);}
+    100%{transform:translateY(0);}
+}
+.emoji{
+    font-size: .95em;
+}
+.descripcion{
+    color:black;
+    font-size:1rem;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+#btnEntrar{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:1rem;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(135deg,#ff7fc2,#7cc8ff);
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+    transition:.3s;
+}
+#btnEntrar:hover{
+    transform:scale(1.04);
+}
+#btnEntrar:active{
+    transform:scale(.98);
+}
+.creditos{
+    margin-top:25px;
+    font-size:.50rem;
+    color:rgb(156, 155, 155);
+    opacity:.9;
+}
+#nieve,
+#estrellas,
+#medusas{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:0;
+}
+@media(max-width:480px){
+    h1{
+        font-size:1.8rem;
+    }
+    .descripcion{
+        font-size:.95rem;
+    }
+}
+#fotoFafa{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:6px solid white;
+    display:block;
+    margin:25px auto;
+    box-shadow:0 10px 30px rgba(0,0,0,.20);
+}
+#formulario{
+    width:100%;
+    background:rgba(255,255,255,.25);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.18);
+}
+#formulario h2{
+    color:#4b2d63;
+    text-shadow: none;
+    text-align:center;
+    margin-bottom:15px;
+}
+.emoji2{
+    font-size: .95em;
+}
+.textoFormulario{
+    color:#555;
+    text-align:center;
+    margin-bottom:25px;
+}
+input,
+textarea{
+    width:100%;
+    border:none;
+    border-radius:18px;
+    padding:15px;
+    margin-bottom:18px;
+    font-family:Poppins;
+    font-size:15px;
+}
+textarea{
+    resize:none;
+}
+.subirFoto{
+    display:block;
+    text-align:center;
+    padding:15px;
+    border-radius:18px;
+    background:white;
+    margin-bottom:18px;
+    cursor:pointer;
+}
+.ejemploFoto{
+    font-size: 10px;
+    color:gray
+}
+#formulario button{
+    width:100%;
+    border:none;
+    border-radius:40px;
+    padding:16px;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(90deg,#ff7fc2,#77c5ff);
+}
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+.modalContenido{
+    width:90%;
+    max-width:350px;
+    padding:30px;
+    border-radius:30px;
+    text-align:center;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(18px);
+    animation: aparecerModal .4s;
+}
+.modalContenido h2{
+    color:#ff5da8;
+    margin-bottom:15px;
+}
+.modalContenido p{
+    color:#555;
+    margin-bottom:25px;
+}
+.modalContenido button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:40px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    background:linear-gradient(90deg,#ff7fc2,#7ac7ff);
+}
+@keyframes aparecerModal{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+#muro{
+    margin-top:60px;
+}
+#encabezadoMuro{
+    text-align: center;
+    margin-bottom: 35px;
+    z-index: 10;
+}
+#muro h2{
+    font-size: 2rem;
+    text-align:center;
+    color:#763962;
+    text-shadow:
+        0 0 6px #f4d5ff,
+        0 0 25px rgba(255,183,232,.45);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+}
+.textoMuro{
+    margin-top:18px;
+    color:black;
+    line-height:1.8;
+    font-size:1rem;
+    text-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+#contenedorCartas{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+.carta{
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(15px);
+    border-radius:25px;
+    padding:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    animation:aparecerCarta .5s;
+}
+.carta img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:auto;
+}
+.sobreCarta{
+    width:170px;
+    height:120px;
+    margin:auto;
+    position:relative;
+    cursor:pointer;
+    perspective: 800px;
+}
+.cuerpoSobre{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:90px;
+    background:linear-gradient(to bottom,#fff8f0,#ffeedc);
+    border-radius:0 0 14px 14px;
+    border:2px solid #f7d8ef;
+    box-shadow:0 12px 24px rgba(0,0,0,.12);
+    z-index: 2;
+}
+.cuerpoSobre::before,
+.cuerpoSobre::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    width:50%;
+    height:100%;
+    background:#fff1e3;
+}
+.cuerpoSobre::before{
+    left:0;
+    clip-path:polygon(
+        0 0,
+        100% 50%,
+        0 100%
+    );
+}
+.cuerpoSobre::after{
+    right:0;
+    clip-path:polygon(100% 0,0 50%,100% 100%);
+}
+.solapa{
+    position:absolute;
+    top:30px;
+    left:0;
+    width:100%;
+    height:70px;
+    background:linear-gradient(to bottom,#ffe9f7,#ffd8ef);
+    clip-path:polygon(0 0,100% 0,50% 100%);
+    transform-origin:top center;
+    transition:transform .7s ease .35s;
+    z-index:4;
+    box-shadow:0 4px 10px rgba(0,0,0,.12);
+}
+.sello{
+    position:absolute;
+    left:50%;
+    top:66px;
+    transform:translateX(-50%);
+    width:38px;
+    height:38px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#ffe6f6,#ffc9e9);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.15);
+    animation:latidoSello 2s ease-in-out infinite;
+    z-index:5;
+}
+.sobreCarta.abierto .solapa{
+    transform:
+        rotateX(180deg)
+        translateY(-6px);
+}
+.sobreCarta.abierto .contenidoCarta{
+    height:170px;
+    transform:
+        translateX(-50%)
+        translateY(-55px);
+}
+.sobreCarta.abierto .sello{
+    animation:despegarSello .35s forwards;
+}
+.sobreCarta:hover{
+    transform:translateY(-8px) scale(1.05);
+}
+.sobreCarta img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    user-select:none;
+}
+.contenidoCarta{
+    position:absolute;
+    left:50%;
+    bottom:18px;
+    transform:translateX(-50%) translateY(40px);
+    width:135px;
+    height:0;
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
+    transition:height .6s ease,transform .6s ease;
+    z-index:3;
+}
+.carta h3{
+    text-align:center;
+    margin-top:15px;
+    color:#ff5da8;
+}
+.carta p{
+    color:#444;
+    margin-top:10px;
+}
+.fechaCarta{
+    margin-top:15px;
+    font-size:13px;
+    text-align:right;
+    color:#777;
+}
+@keyframes aparecerCarta{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+#bienvenida,
+#formulario,
+#muro{
+    width:100%;
+}
+#muro{
+    display:none;
+    animation: aparecerMuro .8s;
+}
+@keyframes aparecerMuro{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+@keyframes despegarSello{
+    0%{
+        transform:translateX(-50%) scale(1);
+        opacity:1;
+    }
+    40%{
+        transform:translateX(-50%) scale(1.25);
+    }
+    100%{
+        transform:translateX(-50%) scale(0);
+        opacity:0;
+    }
+}
+@keyframes latidoSello{
+    0%,100%{
+        transform:translateX(-50%) scale(1);
+    }
+    50%{
+        transform:translateX(-50%) scale(1.08);
+    }
+}
+#visorCarta{
+    position:fixed;
+    inset:0;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+#fondoOscuro{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(6px);
+    animation: aparecerFondo .35s ease;
+}
+#cartaGrande{
+    position:relative;
+    width:90%;
+    max-width:420px;
+    max-height:80vh;
+    overflow:auto;
+    padding:30px;
+    border-radius:25px;
+    background:white;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+    z-index:2;
+    animation:abrirCarta .55s cubic-bezier(.22,1,.36,1);
+}
+@keyframes abrirCarta{
+    0%{
+        opacity:0;
+        transform:scale(.75);
+    }
+    60%{
+        opacity:1;
+        transform:scale(1.05);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+#fotoCarta{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 20px;
+}
+#nombreCarta{
+    text-align:center;
+    color:#ff78b7;
+    margin-bottom:15px;
+}
+#mensajeCarta{
+    white-space:pre-wrap;
+    line-height:1.7;
+    color:#444;
+}
+#fechaGrande{
+    margin-top:20px;
+    text-align:right;
+    color:#888;
+}
+#cerrarCarta{
+    position:absolute;
+    right:15px;
+    top:15px;
+    border:none;
+    background:none;
+    font-size:22px;
+    cursor:pointer;
+}
+@keyframes aparecerFondo{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+#finalFiesta{
+    text-align:center;
+    margin-top:80px;
+    padding-bottom:50px;
+}
+#finalFiesta h2{
+    color:#373fb1;
+    text-shadow:0 0 8px #f4d5ff;
+    margin-bottom:30px;
+}
+#fotoArtista{
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid rgba(255,255,255,.8);
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    margin-bottom:25px;
+}
+#finalFiesta p{
+    color:black;
+    font-size:1.1rem;
+    text-shadow:0 2px 10px rgba(211, 119, 119, 0.3);
+    line-height:1.7;
+}
+#finalFiesta h3{
+    color:#bc5b9d;
+    margin:25px;
+}
+#pastel{
+    width:200px;
+    display:block;
+    margin:auto;
+}
+#btnVelas{
+    margin-top:25px;
+    padding:15px 30px;
+    border:none;
+    border-radius:40px;
+    background:linear-gradient(90deg,#ffb7e8,#a7d8ff);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}

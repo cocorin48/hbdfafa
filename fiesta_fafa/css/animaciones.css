@@ -1,0 +1,151 @@
+#bienvenida{
+    animation: aparecer 1.2s ease;
+}
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+#sobre{
+    animation: flotar 4s ease-in-out infinite;
+}
+@keyframes flotar{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+#btnEntrar{
+    position:relative;
+    overflow:hidden;
+}
+#btnEntrar::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:rgba(255,255,255,.35);
+    transform:skewX(-25deg);
+}
+#btnEntrar:hover::before{
+    animation: brillo .8s;
+}
+@keyframes brillo{
+    from{
+        left:-120%;
+    }
+    to{
+        left:150%;
+    }
+}
+h1{
+    animation: titulo 3s ease-in-out infinite;
+}
+@keyframes titulo{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.03);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+.creditos{
+    animation: creditos 2.5s infinite;
+}
+@keyframes creditos{
+    0%{
+        opacity:.6;
+    }
+    50%{
+        opacity:1;
+    }
+    100%{
+        opacity:.6;
+    }
+}
+#fondo{
+    animation: fondoZoom 18s ease-in-out infinite;
+}
+@keyframes fondoZoom{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.08);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+.estrella{
+    position:absolute;
+    opacity:.8;
+    animation: parpadear 2.5s infinite ease-in-out;
+}
+@keyframes parpadear{
+    0%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+    100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+}
+.copo{
+    position:absolute;
+    animation-name: caer;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+@keyframes caer{
+    from{
+        transform:translateY(-120vh) rotate(0deg);
+    }
+    to{
+        transform:translateY(220vh) rotate(360deg);
+    }
+}
+.medusa{
+    position:absolute;
+    opacity:.85;
+    animation-name: flotarMedusa;
+    animation-timing-function:ease-in-out;
+    animation-iteration-count:infinite;
+}
+@keyframes flotarMedusa{
+    0%{
+        transform:
+        translateY(0)
+        translateX(0);
+    }
+    50%{
+        transform:
+        translateY(-35px)
+        translateX(20px);
+    }
+    100%{
+        transform:
+        translateY(0)
+        translateX(-20px);
+    }
+}
